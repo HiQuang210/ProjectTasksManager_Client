@@ -3,21 +3,22 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-export interface User {
-  _id: string;
-  name: string;
-  email: string;
-}
+import { User } from "../../types/user";
 
 interface AuthState {
   user: User | null;
+
   isSidebarOpen: boolean;
 }
 
 const initialState: AuthState = {
-  user: localStorage.getItem("userInfo")
+  user: localStorage.getItem(
+    "userInfo"
+  )
     ? JSON.parse(
-        localStorage.getItem("userInfo")!
+        localStorage.getItem(
+          "userInfo"
+        ) as string
       )
     : null,
 
@@ -30,19 +31,21 @@ const authSlice = createSlice({
   initialState,
 
   reducers: {
-    setCredentials(
+    setCredentials: (
       state,
       action: PayloadAction<User>
-    ) {
+    ) => {
       state.user = action.payload;
 
       localStorage.setItem(
         "userInfo",
-        JSON.stringify(action.payload)
+        JSON.stringify(
+          action.payload
+        )
       );
     },
 
-    logout(state) {
+    logout: (state) => {
       state.user = null;
 
       localStorage.removeItem(
@@ -50,10 +53,10 @@ const authSlice = createSlice({
       );
     },
 
-    setOpenSidebar(
+    setOpenSidebar: (
       state,
       action: PayloadAction<boolean>
-    ) {
+    ) => {
       state.isSidebarOpen =
         action.payload;
     },

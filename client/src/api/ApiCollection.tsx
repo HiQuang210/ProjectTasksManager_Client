@@ -1,5 +1,5 @@
 import { api } from "./axios";
-import { ChangePasswordDto, LoginDto, RegisterDto } from "./types";
+import { ChangePasswordDto, LoginDto, RegisterDto, MarkNotificationDto } from "./types";
 
 const USER_URL = "/user";
 const TASK_URL = "/task";
@@ -195,16 +195,15 @@ export const ApiCollection = {
   },
 
   markNotiAsRead: async (
-    type: string,
-    id?: string
+    data: MarkNotificationDto
   ) => {
     const response = await api.put(
       `${USER_URL}/read-noti`,
       {},
       {
         params: {
-          isReadType: type,
-          id,
+          isReadType: data.type,
+          id: data.id,
         },
       }
     );
