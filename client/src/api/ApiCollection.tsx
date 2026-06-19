@@ -7,13 +7,34 @@ const TASK_URL = "/task";
 export const ApiCollection = {
   // ================= AUTH =================
 
-  login: async (data: LoginDto) => {
-    const response = await api.post(
-      `${USER_URL}/login`,
-      data
-    );
+  // login: async (data: LoginDto) => {
+  //   const response = await api.post(
+  //     `${USER_URL}/login`,
+  //     data
+  //   );
 
-    return response.data;
+  //   return response.data;
+  // },
+
+  login: async (data: LoginDto) => {
+    // MOCK LOGIN
+    if (
+      data.email === "admin@gmail.com" &&
+      data.password === "admin"
+    ) {
+      return {
+        token: "dummy-token",
+        user: {
+          _id: "1",
+          name: "Admin",
+          email: "admin@gmail.com",
+          role: "admin",
+          isAdmin: true,
+        },
+      };
+    }
+
+    throw new Error("Invalid email or password");
   },
 
   register: async (data: RegisterDto) => {
