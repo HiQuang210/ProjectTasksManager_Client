@@ -18,16 +18,16 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AddUser from "./AddUser";
 import ChangePassword from "./ChangePassword";
-import { getInitials } from "../utils";
+import { getInitials } from "@/utils";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../redux/hooks";
+} from "@/redux/hooks";
 import {
   logout,
-} from "../redux/slices/authSlice";
+} from "@/redux/slices/authSlice";
 
-import { ApiCollection } from "../api/ApiCollection";
+import { ApiCollection } from "@/api/ApiCollection";
 
 const UserAvatar = () => {
   const [open, setOpen] =

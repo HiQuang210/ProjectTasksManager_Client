@@ -3,7 +3,7 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { User } from "../../types/user";
+import { User } from "@/types/user";
 
 interface AuthState {
   user: User | null;

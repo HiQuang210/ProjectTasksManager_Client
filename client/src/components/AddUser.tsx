@@ -11,13 +11,13 @@ import Button from "./Button";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../redux/hooks";
+} from "@/redux/hooks";
 import {
   setCredentials,
-} from "../redux/slices/authSlice";
-import { User } from "../types/user";
-import { AddUserDto } from "../types/api";
-import { ApiCollection } from "../api/ApiCollection";
+} from "@/redux/slices/authSlice";
+import { User } from "@/types/user";
+import { AddUserDto } from "@/types/api";
+import { ApiCollection } from "@/api/ApiCollection";
 
 interface AddUserProps {
   open: boolean;

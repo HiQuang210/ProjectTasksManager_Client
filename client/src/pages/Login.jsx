@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import Textbox from "../components/Textbox";
-import Button from "../components/Button";
-import Loading from "../components/Loader";
+import Textbox from "@/components/Textbox";
+import Button from "@/components/Button";
+import Loading from "@/components/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoginMutation } from "../redux/slices/api/authApiSlice";
+import { useLoginMutation } from "@/redux/slices/api/authApiSlice";
 import { toast } from "react-toastify";
-import { setCredentials } from "../redux/slices/authSlice";
+import { setCredentials } from "@/redux/slices/authSlice";
 
 const Login = () => {
   const { user } = useSelector((state) => state.auth);

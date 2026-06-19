@@ -1,6 +1,6 @@
 import TaskCard from "./TaskCard";
 
-import { Task } from "../types/task";
+import { Task } from "@/types/task";
 
 interface BoardViewProps {
   tasks: Task[];

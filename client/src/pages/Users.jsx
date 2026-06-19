@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Title from "../components/Title";
-import Button from "../components/Button";
+import Title from "@/components/Title";
+import Button from "@/components/Button";
 import { IoPersonAdd } from "react-icons/io5";
-import { getInitials } from "../utils";
+import { getInitials } from "@/utils";
 import clsx from "clsx";
-import ConfirmationDialog, { UserAction } from "../components/Dialogs";
+import ConfirmationDialog, { UserAction } from "@/components/Dialogs";
 import { toast } from "react-toastify";
-import AddUser from "../components/AddUser";
-import { useDeleteUserMutation, useUserActionMutation, useGetTeamListQuery } from "../redux/slices/api/userApiSlice";
+import AddUser from "@/components/AddUser";
+import { useDeleteUserMutation, useUserActionMutation, useGetTeamListQuery } from "@/redux/slices/api/userApiSlice";
 import { set } from "react-hook-form";
 
 const Users = () => {

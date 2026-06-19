@@ -7,17 +7,7 @@ import {
 
 import ModalWrapper from "./ModalWrapper";
 
-interface NotificationTask {
-  title?: string;
-}
-
-interface NotificationItem {
-  _id?: string;
-
-  text?: string;
-
-  task?: NotificationTask;
-}
+import { Notification } from "@/types/notification";
 
 interface ViewNotificationProps {
   open: boolean;
@@ -26,7 +16,7 @@ interface ViewNotificationProps {
     SetStateAction<boolean>
   >;
 
-  el: NotificationItem | null;
+  el: Notification | null;
 }
 
 const ViewNotification = ({

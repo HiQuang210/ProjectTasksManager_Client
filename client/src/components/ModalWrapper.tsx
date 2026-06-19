@@ -4,19 +4,17 @@ import {
 } from "@headlessui/react";
 
 import {
-  Dispatch,
   Fragment,
   ReactNode,
-  SetStateAction,
   useRef,
 } from "react";
 
 interface ModalWrapperProps {
   open: boolean;
 
-  setOpen: Dispatch<
-    SetStateAction<boolean>
-  >;
+  setOpen: (
+    value: boolean
+  ) => void;
 
   children: ReactNode;
 }

@@ -21,8 +21,8 @@ import {
 
 import { Link } from "react-router-dom";
 import ViewNotification from "./ViewNotification";
-import { Notification } from "../types/notification";
-import { ApiCollection } from "../api/ApiCollection";
+import { Notification } from "@/types/notification";
+import { ApiCollection } from "@/api/ApiCollection";
 
 interface IconMap {
   [key: string]: ReactNode;

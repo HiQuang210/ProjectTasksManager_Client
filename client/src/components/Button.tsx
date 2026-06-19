@@ -1,12 +1,14 @@
 import clsx from "clsx";
-import { ReactNode } from "react";
 
-interface ButtonProps {
+import {
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
+
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
-  className?: string;
   label: string;
-  type?: "button" | "submit" | "reset";
-  onClick?: () => void;
 }
 
 const Button = ({
@@ -14,7 +16,7 @@ const Button = ({
   className,
   label,
   type = "button",
-  onClick,
+  ...props
 }: ButtonProps) => {
   return (
     <button
@@ -23,7 +25,7 @@ const Button = ({
         "px-3 py-2 outline-none",
         className
       )}
-      onClick={onClick}
+      {...props}
     >
       <span>{label}</span>
 

@@ -23,11 +23,11 @@ import {
 import {
   useAppDispatch,
   useAppSelector,
-} from "../redux/hooks";
+} from "@/redux/hooks";
 
 import {
   setOpenSidebar,
-} from "../redux/slices/authSlice";
+} from "@/redux/slices/authSlice";
 
 interface SidebarLink {
   label: string;

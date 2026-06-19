@@ -10,8 +10,8 @@ import ModalWrapper from "./ModalWrapper";
 import Textbox from "./Textbox";
 import Loading from "./Loader";
 import Button from "./Button";
-import { ApiCollection } from "../api/ApiCollection";
-import { ChangePasswordForm } from "../types/api";
+import { ApiCollection } from "@/api/ApiCollection";
+import { ChangePasswordForm } from "@/types/api";
 
 interface ChangePasswordProps {
   open: boolean;

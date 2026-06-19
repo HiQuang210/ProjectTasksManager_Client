@@ -7,13 +7,13 @@ import {
   MdKeyboardDoubleArrowUp,
   MdOutlineRestore,
 } from "react-icons/md";
-import Title from "../components/Title";
-import Button from "../components/Button";
+import Title from "@/components/Title";
+import Button from "@/components/Button";
 import { toast } from "react-toastify"
-import { PRIORITYSTYLES, TASK_TYPE } from "../utils";
-import Loading from "../components/Loader";
-import ConfirmationDialog from "../components/Dialogs";
-import { useGetAllTaskQuery, useDeleteRestoreTaskMutation } from "../redux/slices/api/taskApiSlice";
+import { PRIORITYSTYLES, TASK_TYPE } from "@/utils";
+import Loading from "@/components/Loader";
+import ConfirmationDialog from "@/components/Dialogs";
+import { useGetAllTaskQuery, useDeleteRestoreTaskMutation } from "@/redux/slices/api/taskApiSlice";
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,

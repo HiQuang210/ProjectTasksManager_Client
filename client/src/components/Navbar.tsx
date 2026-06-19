@@ -4,10 +4,10 @@ import UserAvatar from "./UserAvatar";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../redux/hooks";
+} from "@/redux/hooks";
 import {
   setOpenSidebar,
-} from "../redux/slices/authSlice";
+} from "@/redux/slices/authSlice";
 
 const Navbar = () => {
   const { } =
