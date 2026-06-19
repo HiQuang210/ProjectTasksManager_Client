@@ -1,12 +1,14 @@
 import { User } from "./user";
 
 export interface SubTask {
+  _id: string;
   title: string;
   date: string;
   tag: string;
 }
 
 export interface Activity {
+  _id: string;
   type: string;
   activity: string;
   date: string;

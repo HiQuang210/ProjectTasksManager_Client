@@ -8,7 +8,7 @@ import {
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
-  label: string;
+  label?: string;
 }
 
 const Button = ({
@@ -22,14 +22,16 @@ const Button = ({
     <button
       type={type}
       className={clsx(
-        "px-3 py-2 outline-none",
+        "px-3 py-2 outline-none flex items-center justify-center gap-1",
         className
       )}
       {...props}
     >
-      <span>{label}</span>
+      {label && (
+        <span>{label}</span>
+      )}
 
-      {icon && icon}
+      {icon}
     </button>
   );
 };

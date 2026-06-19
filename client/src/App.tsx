@@ -1,4 +1,5 @@
 import { Transition } from "@headlessui/react";
+import './index.css';
 import clsx from "clsx";
 import { Fragment, useRef } from "react";
 import { IoClose } from "react-icons/io5";
@@ -17,13 +18,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-
 import Login from "./pages/Login";
 import TaskDetails from "./pages/TaskDetails";
 import Tasks from "./pages/Tasks";
 import Trash from "./pages/Trash";
 import Users from "./pages/Users";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 
 import { setOpenSidebar } from "./redux/slices/authSlice";
 

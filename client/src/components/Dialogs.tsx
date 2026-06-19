@@ -7,9 +7,9 @@ import {
 
 import Button from "./Button";
 import ModalWrapper from "./ModalWrapper";
-
-type DialogType =
+export type DialogType =
   | "delete"
+  | "deleteAll"
   | "restore"
   | "restoreAll";
 
@@ -22,17 +22,17 @@ interface ConfirmationDialogProps {
 
   msg?: string | null;
 
-  setMsg?: (
-    msg: string | null
-  ) => void;
+  setMsg?: React.Dispatch<
+    React.SetStateAction<string | null>
+  >;
 
   onClick?: () => void;
 
   type?: DialogType;
 
-  setType?: (
-    type: DialogType
-  ) => void;
+  setType?: React.Dispatch<
+    React.SetStateAction<DialogType>
+  >;
 }
 
 const ConfirmationDialog = ({
@@ -53,23 +53,21 @@ const ConfirmationDialog = ({
       setOpen(false);
     };
 
+  const isRestore =
+    type === "restore" ||
+    type === "restoreAll";
+
   return (
     <ModalWrapper
       open={open}
       setOpen={closeDialog}
     >
       <div className="py-4 w-full flex flex-col gap-4 items-center justify-center">
-        <Dialog.Title
-          as="h3"
-        >
+        <Dialog.Title as="h3">
           <p
             className={clsx(
               "p-3 rounded-full",
-
-              type ===
-                "restore" ||
-                type ===
-                  "restoreAll"
+              isRestore
                 ? "text-yellow-600 bg-yellow-100"
                 : "text-red-600 bg-red-200"
             )}
@@ -90,20 +88,13 @@ const ConfirmationDialog = ({
             type="button"
             className={clsx(
               "px-8 text-sm font-semibold text-white sm:w-auto",
-
-              type ===
-                "restore" ||
-                type ===
-                  "restoreAll"
+              isRestore
                 ? "bg-yellow-600"
                 : "bg-red-600 hover:bg-red-500"
             )}
-            onClick={
-              onClick
-            }
+            onClick={onClick}
             label={
-              type ===
-              "restore"
+              isRestore
                 ? "Restore"
                 : "Delete"
             }
@@ -112,9 +103,7 @@ const ConfirmationDialog = ({
           <Button
             type="button"
             className="bg-white px-8 text-sm font-semibold text-gray-900 sm:w-auto border"
-            onClick={
-              closeDialog
-            }
+            onClick={closeDialog}
             label="Cancel"
           />
         </div>
@@ -138,7 +127,6 @@ interface UserActionProps {
 export const UserAction = ({
   open,
   setOpen,
-
   onClick = () => {},
 }: UserActionProps) => {
   const closeDialog =
@@ -152,18 +140,9 @@ export const UserAction = ({
       setOpen={closeDialog}
     >
       <div className="py-4 w-full flex flex-col gap-4 items-center justify-center">
-        <Dialog.Title
-          as="h3"
-        >
-          <p
-            className={clsx(
-              "p-3 rounded-full",
-              "text-red-600 bg-red-200"
-            )}
-          >
-            <FaQuestion
-              size={60}
-            />
+        <Dialog.Title as="h3">
+          <p className="p-3 rounded-full text-red-600 bg-red-200">
+            <FaQuestion size={60} />
           </p>
         </Dialog.Title>
 
@@ -177,22 +156,15 @@ export const UserAction = ({
         <div className="bg-gray-50 py-3 sm:flex sm:flex-row-reverse gap-4">
           <Button
             type="button"
-            className={clsx(
-              "px-8 text-sm font-semibold text-white sm:w-auto",
-              "bg-red-600 hover:bg-red-500"
-            )}
-            onClick={
-              onClick
-            }
+            className="px-8 text-sm font-semibold text-white sm:w-auto bg-red-600 hover:bg-red-500"
+            onClick={onClick}
             label="Yes"
           />
 
           <Button
             type="button"
             className="bg-white px-8 text-sm font-semibold text-gray-900 sm:w-auto border"
-            onClick={
-              closeDialog
-            }
+            onClick={closeDialog}
             label="No"
           />
         </div>

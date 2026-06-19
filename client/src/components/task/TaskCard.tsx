@@ -22,9 +22,9 @@ import {
 
 import { Task } from "@/types/task";
 
-import TaskDialog from "./task/TaskDialog";
-import UserInfo from "./UserInfo";
-import AddSubTask from "./task/AddSubTask";
+import TaskDialog from "@/components/task/TaskDialog";
+import UserInfo from "@/components/UserInfo";
+import AddSubTask from "@/components/task/AddSubTask";
 
 const ICONS = {
   high: (

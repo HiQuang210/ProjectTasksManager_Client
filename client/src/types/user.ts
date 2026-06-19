@@ -4,5 +4,7 @@ export interface User {
   email: string;
   title?: string;
   role?: string;
+  createdAt?: string;
+  isActive?: boolean;
   isAdmin?: boolean;
 }
